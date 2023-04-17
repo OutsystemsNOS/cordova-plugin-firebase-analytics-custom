@@ -19,7 +19,9 @@ ext.postBuildExtras = {
     if (project.extensions.findByName('googleServices') == null) {
         // apply plugin: 'com.google.gms.google-services'
         // class must be used instead of id(string) to be able to apply plugin from non-root gradle file
-        apply plugin: com.google.gms.googleservices.GoogleServicesPlugin
-        googleServices.disableVersionCheck = true
+        
+        //mlrosa - por vezes temos erros relacionados com a duplicação do google services 
+        //apply plugin: com.google.gms.googleservices.GoogleServicesPlugin
+        //googleServices.disableVersionCheck = true
     }
 }
