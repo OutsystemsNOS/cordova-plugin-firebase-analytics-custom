@@ -22,8 +22,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
     <preference name="ANALYTICS_COLLECTION_ENABLED" default="true" />
     <preference name="AUTOMATIC_SCREEN_REPORTING_ENABLED" default="true" />
-    <!--<preference name="USER_TRACKING_DESCRIPTION_IOS" default="$(PRODUCT_NAME) needs your attention." />-->
-    <preference name="USER_TRACKING_DESCRIPTION_IOS" default="Esta informação será utilizada para lhe apresentar anúncios personalizados." />      
+    <preference name="USER_TRACKING_DESCRIPTION_IOS" default="$(PRODUCT_NAME) needs your attention." />    
            
     <dependency id="cordova-outsystems-firebase-core" url="https://github.com/OutSystems/cordova-outsystems-firebase-core.git#1.0.1"/>
 
@@ -48,14 +47,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </config-file>
         <config-file target="*-Info.plist" parent="FirebaseAutomaticScreenReportingEnabled">
             <string>$AUTOMATIC_SCREEN_REPORTING_ENABLED</string>
-        </config-file>
-        <!--       
+        </config-file>      
         <config-file target="*-Info.plist" parent="NSUserTrackingUsageDescription">
             <string>$USER_TRACKING_DESCRIPTION_IOS</string>
-        </config-file>
-        -->
-        <config-file target="*-Info.plist" parent="NSUserTrackingUsageDescription">
-            <string>Esta informação será utilizada para lhe apresentar anúncios personalizados.</string>
         </config-file>
 
         <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
