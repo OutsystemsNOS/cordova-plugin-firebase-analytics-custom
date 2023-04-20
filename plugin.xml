@@ -48,11 +48,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="*-Info.plist" parent="FirebaseAutomaticScreenReportingEnabled">
             <string>$AUTOMATIC_SCREEN_REPORTING_ENABLED</string>
         </config-file>     
-         <!--      
+   
         <config-file target="*-Info.plist" parent="NSUserTrackingUsageDescription">
             <string>$USER_TRACKING_DESCRIPTION_IOS</string>
         </config-file>
-          -->
 
         <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
         <source-file src="src/ios/FirebaseAnalyticsPlugin.m" />
