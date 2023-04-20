@@ -9,8 +9,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <keywords>cordova</keywords>
     <repo>https://github.com/chemerisuk/cordova-plugin-firebase-analytics</repo>
     <issue>https://github.com/chemerisuk/cordova-plugin-firebase-analytics/issues</issue>
-
-    BATATAS       
            
     <js-module src="www/FirebaseAnalytics.js" name="FirebaseAnalytics">
         <merges target="cordova.plugins.firebase.analytics" />
