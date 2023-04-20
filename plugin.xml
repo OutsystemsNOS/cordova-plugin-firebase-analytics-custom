@@ -38,7 +38,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 <param name="onload" value="$ANALYTICS_COLLECTION_ENABLED" />
             </feature>
         </config-file>
-
+>
         <!--
             use a bit hacky method to set boolean value as a string:
             https://developer.apple.com/documentation/foundation/nsstring/1409420-boolvalue?preferredLanguage=occ
