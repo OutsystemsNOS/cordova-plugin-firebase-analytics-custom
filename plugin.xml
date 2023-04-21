@@ -42,16 +42,17 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             use a bit hacky method to set boolean value as a string:
             https://developer.apple.com/documentation/foundation/nsstring/1409420-boolvalue?preferredLanguage=occ
         -->
-        <config-file target="*-Info.plist" parent="FIREBASE_ANALYTICS_COLLECTION_ENABLED">
-            <string>$ANALYTICS_COLLECTION_ENABLED</string>
-        </config-file>
-        <config-file target="*-Info.plist" parent="FirebaseAutomaticScreenReportingEnabled">
-            <string>$AUTOMATIC_SCREEN_REPORTING_ENABLED</string>
-        </config-file>     
-   
         <config-file target="*-Info.plist" parent="NSUserTrackingUsageDescription">
             <string>$USER_TRACKING_DESCRIPTION_IOS</string>
         </config-file>
+               
+        <config-file target="*-Info.plist" parent="FIREBASE_ANALYTICS_COLLECTION_ENABLED">
+            <string>$ANALYTICS_COLLECTION_ENABLED</string>
+        </config-file>
+               
+        <config-file target="*-Info.plist" parent="FirebaseAutomaticScreenReportingEnabled">
+            <string>$AUTOMATIC_SCREEN_REPORTING_ENABLED</string>
+        </config-file>     
 
         <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
         <source-file src="src/ios/FirebaseAnalyticsPlugin.m" />
