@@ -72,7 +72,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <!--<preference name="ANDROID_FIREBASE_ANALYTICS_VERSION" default="19.0.+"/>-->
         <preference name="ANDROID_FIREBASE_ANALYTICS_VERSION" default="21.1.+"/>
 
-        <hook type="before_plugin_install" src="hooks/android/build_gradle_add_dependency.js" />
+        <!-- <hook type="before_plugin_install" src="hooks/android/build_gradle_add_dependency.js" /> -->
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
