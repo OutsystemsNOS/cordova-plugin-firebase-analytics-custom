@@ -79,7 +79,6 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, screenName);
         bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, screenClass);
-        bundle.putString(MyAppAnalyticsConstants.Param.TOPIC, topic);
         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
 
         callbackContext.success();
