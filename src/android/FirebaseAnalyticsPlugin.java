@@ -73,6 +73,17 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
 
         callbackContext.success();
     }
+    
+    @CordovaMethod
+    private void setScreenView(String screenName, String screenClass, String topic, CallbackContext callbackContext) {
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, screenName);
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, screenClass);
+        bundle.putString(MyAppAnalyticsConstants.Param.TOPIC, topic);
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+
+        callbackContext.success();
+    }
 
     @CordovaMethod
     private void setDefaultEventParameters(JSONObject params, CallbackContext callbackContext) throws JSONException {
