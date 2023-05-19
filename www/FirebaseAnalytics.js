@@ -40,6 +40,11 @@ module.exports = {
             exec(resolve, reject, PLUGIN_NAME, "setCurrentScreen", [name]);
         });
     },
+    setScreenView: function(name, screenClass, screenTopic) {
+        return new Promise(function(resolve, reject) {
+            exec(resolve, reject, PLUGIN_NAME, "setCurrentScreen", [name, screenClass, screenTopic]);
+        });
+    },
     setDefaultEventParameters: function(defaults) {
         return new Promise(function(resolve, reject) {
             if (typeof defaults !== "object") {
