@@ -62,6 +62,19 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)setScreenView:(CDVInvokedUrlCommand *)command {
+    NSString* screenName = [command.arguments objectAtIndex:0];
+    NSString* screenClass = [command.arguments objectAtIndex:1];
+
+    [FIRAnalytics logEventWithName:kFIREventScreenView parameters:@{
+        kFIRParameterScreenName: screenName,
+         kFIRParameterScreenClass: screenClass
+    }];
+
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 - (void)resetAnalyticsData:(CDVInvokedUrlCommand *)command {
     [FIRAnalytics resetAnalyticsData];
 
