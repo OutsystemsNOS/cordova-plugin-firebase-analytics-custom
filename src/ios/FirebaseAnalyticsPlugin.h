@@ -7,6 +7,7 @@
 - (void)setUserProperty:(CDVInvokedUrlCommand*)command;
 - (void)setEnabled:(CDVInvokedUrlCommand*)command;
 - (void)setCurrentScreen:(CDVInvokedUrlCommand*)command;
+- (void)setScreenView:(CDVInvokedUrlCommand*)command;
 - (void)resetAnalyticsData:(CDVInvokedUrlCommand*)command;
 - (void)setDefaultEventParameters:(CDVInvokedUrlCommand*)command;
 - (void)requestTrackingAuthorization:(CDVInvokedUrlCommand*)command;
