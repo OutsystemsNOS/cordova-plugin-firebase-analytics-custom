@@ -74,6 +74,17 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
         callbackContext.success();
     }
     
+    @Override
+    public void onResume(String screenName, String screenClass, String topic, CallbackContext callbackContext){
+        super.onResume();
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, screenName);
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, screenClass);
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+
+        callbackContext.success();
+    }    
+    
     @CordovaMethod
     private void setScreenView(String screenName, String screenClass, String topic, CallbackContext callbackContext) {
         Bundle bundle = new Bundle();
