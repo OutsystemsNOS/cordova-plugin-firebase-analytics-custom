@@ -33,6 +33,8 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
     @CordovaMethod
     private void logEvent(String name, JSONObject params, CallbackContext callbackContext) throws JSONException {
         this.firebaseAnalytics.logEvent(name, parse(params));
+        
+        Log.d(TAG, "Params: " + params.toString());
 
         callbackContext.success();
     }
