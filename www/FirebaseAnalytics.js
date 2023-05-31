@@ -42,7 +42,7 @@ module.exports = {
     },
     setScreenView: function(name, screenClass, screenTopic) {
         return new Promise(function(resolve, reject) {
-            exec(resolve, reject, PLUGIN_NAME, "setCurrentScreen", [name, screenClass, screenTopic]);
+            exec(resolve, reject, PLUGIN_NAME, "setScreenView", [name, screenClass, screenTopic]);
         });
     },
     setDefaultEventParameters: function(defaults) {
