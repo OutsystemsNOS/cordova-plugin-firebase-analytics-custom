@@ -2,6 +2,11 @@ var exec = require("cordova/exec");
 var PLUGIN_NAME = "FirebaseAnalytics";
 
 module.exports = {
+    setConsent: function(ConsentTypeAnalyticsStorage, ConsentTypeAdStorage, ConsentTypeAdUserData, ConsentTypeAdPersonalization) {
+        return new Promise(function(resolve, reject) {
+            exec(resolve, reject, PLUGIN_NAME, "setConsent", [ConsentTypeAnalyticsStorage, ConsentTypeAdStorage, ConsentTypeAdUserData, ConsentTypeAdPersonalization]);
+        });
+    },
     logEvent: function(name, params) {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, "logEvent", [name, params || {}]);
