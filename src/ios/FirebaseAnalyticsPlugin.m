@@ -13,6 +13,44 @@
     }
 }
 
+- (void)setConsent:(CDVInvokedUrlCommand *)command {
+    NSString* ConsentTypeAnalyticsStorage = [command.arguments objectAtIndex:0];
+    NSString* ConsentTypeAdStorage = [command.arguments objectAtIndex:1];
+    NSString* ConsentTypeAdUserData = [command.arguments objectAtIndex:2];
+    NSString* ConsentTypeAdPersonalization = [command.arguments objectAtIndex:3];
+
+    NSMutableDictionary *consentDictionary = [NSMutableDictionary dictionary];
+    
+    if ([ConsentTypeAnalyticsStorage isEqualToString:@"true"]) {
+        [consentDictionary setObject:FIRConsentStatusGranted forKey:FIRConsentTypeAnalyticsStorage];
+    } else {
+        [consentDictionary setObject:FIRConsentStatusDenied forKey:FIRConsentTypeAnalyticsStorage];
+    }
+    
+    if ([ConsentTypeAdStorage isEqualToString:@"true"]) {
+        [consentDictionary setObject:FIRConsentStatusGranted forKey:FIRConsentTypeAdStorage];
+    } else {
+        [consentDictionary setObject:FIRConsentStatusDenied forKey:FIRConsentTypeAdStorage];
+    }
+    
+    if ([ConsentTypeAdUserData isEqualToString:@"true"]) {
+        [consentDictionary setObject:FIRConsentStatusGranted forKey:FIRConsentTypeAdUserData];
+    } else {
+        [consentDictionary setObject:FIRConsentStatusDenied forKey:FIRConsentTypeAdUserData];
+    }
+    
+    if ([ConsentTypeAdPersonalization isEqualToString:@"true"]) {
+        [consentDictionary setObject:FIRConsentStatusGranted forKey:FIRConsentTypeAdPersonalization];
+    } else {
+        [consentDictionary setObject:FIRConsentStatusDenied forKey:FIRConsentTypeAdPersonalization];
+    }
+    
+    [FIRAnalytics setConsent:consentDictionary];
+
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 - (void)logEvent:(CDVInvokedUrlCommand *)command {
     NSString* name = [command.arguments objectAtIndex:0];
     NSDictionary* parameters = [command.arguments objectAtIndex:1];
