@@ -12,8 +12,11 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import org.apache.cordova.CallbackContext;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
 
 import java.util.Iterator;
+import java.util.Map;
+import java.util.EnumMap;
 
 
 public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
