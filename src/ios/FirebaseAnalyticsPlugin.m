@@ -2,6 +2,7 @@
 
 //@import Firebase;
 @import FirebaseAnalytics;
+@import FirebaseCore;
 @import AppTrackingTransparency;
 
 @implementation FirebaseAnalyticsPlugin
